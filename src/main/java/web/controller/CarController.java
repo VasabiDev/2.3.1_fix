@@ -12,17 +12,22 @@ import java.util.List;
 public class CarController {
     @GetMapping("/cars")
     public String getCars(ModelMap model) {
-
-        List<String> messages = new ArrayList<>();
-        messages.add("Hello!");
-        messages.add("I'm car page");
-        messages.add(new Car(145, "devyatka").toString());
-        messages.add(new Car(745, "devyatka1").toString());
-        messages.add(new Car(234, "devyatka2").toString());
-        messages.add(new Car(534, "devyatka3").toString());
-        messages.add(new Car(643, "devyatka4").toString());
-
-        model.addAttribute("messages", messages);
+        List<Car> carsList = new ArrayList<>();
+        carsList.add(new Car(183,"devyatka"));
+        carsList.add(new Car(173,"devyatka"));
+        carsList.add(new Car(193,"devyatka"));
+//        Car car = new Car(145, "devyatka");
+//        Car car1 = new Car(145, "devyatka");
+//        Car car2 = new Car(145, "devyatka");
+//        Car car3 = new Car(145, "devyatka");
+//        Car car4 = new Car(145, "devyatka");
+//        List<Car> carsList = new ArrayList<>();
+//        carsList.add(car);
+//        carsList.add(car1);
+//        carsList.add(car2);
+//        carsList.add(car3);
+//        carsList.add(car4);
+        model.addAttribute("carsList", carsList);
         return "cars";
 
     }
