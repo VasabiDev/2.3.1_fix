@@ -26,5 +26,4 @@ public class CarServiceImpl implements CarService {
     public List<Car> getSomeDevyatki() {
         return carsList;
     }
-
 }
