@@ -13,11 +13,8 @@ import java.util.stream.Collectors;
 
 @Controller
 public class CarController {
-    List<Car> carsList = new ArrayList<>();
-
-    @GetMapping("/cars")
-    public String getCars(ModelMap model, @RequestParam(value = "count") Optional<Integer> count) {
-
+    static List<Car> carsList = new ArrayList<>();
+    static{
         carsList.add(new Car(183, "devyatka"));
         carsList.add(new Car(173, "devyatka"));
         carsList.add(new Car(193, "devyatka"));
@@ -26,6 +23,12 @@ public class CarController {
         carsList.add(new Car(457, "devyatka"));
         carsList.add(new Car(234, "devyatka"));
         carsList.add(new Car(235, "devyatka"));
+    }
+
+
+    @GetMapping("/cars")
+    public String getCars(ModelMap model, @RequestParam(value = "count") Optional<Integer> count) {
+
 
 
         model.addAttribute("carsList", getCarsCounted(count.orElse(0)));
