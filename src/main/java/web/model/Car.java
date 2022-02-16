@@ -21,8 +21,6 @@ public class Car {
     private int series;
 
 
-
-
     public Car(int series, String model) {
         this.series = series;
         this.model = model;
@@ -47,7 +45,6 @@ public class Car {
     public void setSeries(int series) {
         this.series = series;
     }
-
 
 
     @Override
