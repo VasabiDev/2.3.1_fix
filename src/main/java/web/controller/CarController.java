@@ -21,6 +21,11 @@ public class CarController {
         model.addAttribute("carsList", getCarsCounted(count.orElse(0)));
         return "cars";
     }
+    @GetMapping("/auth")
+    public String getCars(ModelMap model) {
+        model.addAttribute("auth");
+        return "auth";
+    }
 
     public List<Car> getCarsCounted(int count) {
         if (count == 0 || count >= 5) {
