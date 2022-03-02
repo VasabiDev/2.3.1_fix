@@ -10,9 +10,10 @@ import web.model.User;
 
 
 @Service
-public class UserServiceImpl  {
+public class UserServiceImpl {
 
     private final UserRepository userDao;
+
     @Autowired
 
     public UserServiceImpl(UserRepository userDao) {
@@ -28,6 +29,7 @@ public class UserServiceImpl  {
         user.setPass(pass);
         userDao.save(user);
     }
+
     @Transactional
     public void userEdit(int id, String name, String email, String pass) {
         User user = getById(id);
@@ -43,11 +45,13 @@ public class UserServiceImpl  {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 
     }
+
     @Transactional
     public void delete(User user) {
         userDao.delete(user);
 
     }
+
     @Transactional
     public Iterable<User> getAll() {
         return userDao.findAll();
